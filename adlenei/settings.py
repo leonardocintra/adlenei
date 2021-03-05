@@ -27,7 +27,7 @@ SECRET_KEY = 'x4&a4)ahpy$sl^^kvd1%ffl=ezh(88p)q2bdo6vhvt$t$$21)!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['adlenei-stage.herokuapp.com', 'adlenei.herokuapp.com']
+ALLOWED_HOSTS = ['adlenei-stage.herokuapp.com', 'adlenei.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'core',
 ]
 
 MIDDLEWARE = [
