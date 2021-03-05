@@ -1,0 +1,21 @@
+{
+    "name": "adlenei",
+    "description": "Adlenei - Curso de Tiro",
+    "image": "heroku/python",
+    "repository": "https://github.com/leonardocintra/adlenei",
+    "keywords": [
+        "python",
+        "django"
+    ],
+    "addons": [
+        "heroku-postgresql"
+    ],
+    "environments": {
+        "test": {
+            "scripts": {
+                "test-setup": "python manage.py collectstatic --noinput",
+                "test": "python manage.py test"
+            }
+        }
+    }
+}
