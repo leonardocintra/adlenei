@@ -14,3 +14,5 @@ class Arma(models.Model):
 
     def __str__(self):
         return self.descricao
+
+    # nao esquecer do laudo piscologico
