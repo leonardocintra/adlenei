@@ -3,8 +3,8 @@ from pessoa.validators import validate_cpf
 
 class Pessoa(models.Model):
     nome = models.CharField('nome', max_length=100)
-    cpf = models.CharField('CPF', max_length=11, validators=[validate_cpf])
-    email = models.EmailField('e-mail')
+    cpf = models.CharField('CPF', max_length=11, validators=[validate_cpf], unique=True)
+    email = models.EmailField('e-mail', unique=True)
     telefone = models.CharField(max_length=20)
     pagou = models.BooleanField(default=False)
     data_cadastro = models.DateTimeField('criado em', auto_now_add=True)
