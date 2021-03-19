@@ -1,3 +1,7 @@
 from django.contrib import admin
+from comprovante.models import Arma
 
-# Register your models here.
+class ArmaModelAdmin(admin.ModelAdmin):
+    list_display = ['descricao', 'marca', 'calibre']
+
+admin.site.register(Arma, ArmaModelAdmin)
