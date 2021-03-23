@@ -1,1 +1,1 @@
-web: gunicorn adlenei.wsgi --log-file -
+web: gunicorn cursotiro.wsgi --log-file -

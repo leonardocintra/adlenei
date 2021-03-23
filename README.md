@@ -1,7 +1,7 @@
-# Adlenei - Sistema de curso de Tiro
+# Sistema de curso de Tiro
 Sistema de gerenciamento de curso de Tiro
 
-[![Build Status](https://travis-ci.com/leonardocintra/adlenei.svg?branch=main)](https://travis-ci.com/leonardocintra/adlenei)
+[![Build Status](https://travis-ci.com/leonardocintra/clube-tiro.svg?branch=main)](https://travis-ci.com/leonardocintra/clube-tiro)
 
 
 ![image](https://media.giphy.com/media/3oKIPBovAJobaGS61W/giphy.gif)

@@ -1,8 +1,8 @@
 {
-    "name": "adlenei",
-    "description": "Adlenei - Curso de Tiro",
+    "name": "curso-tiro",
+    "description": "Curso de Tiro - Sistema de gerenciamento de curso de tiro",
     "image": "heroku/python",
-    "repository": "https://github.com/leonardocintra/adlenei",
+    "repository": "https://github.com/leonardocintra/clube-tiro",
     "keywords": [
         "python",
         "django"
