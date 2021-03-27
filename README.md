@@ -1,5 +1,5 @@
-# Sistema de curso de Tiro
-Sistema de gerenciamento de curso de Tiro
+# Sistema de Clube de Tiro
+Sistema de gerenciamento de Clube ou curso de Tiro
 
 [![Build Status](https://travis-ci.com/leonardocintra/clube-tiro.svg?branch=main)](https://travis-ci.com/leonardocintra/clube-tiro)
 
