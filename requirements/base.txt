@@ -1,4 +1,5 @@
 dj-database-url
 dj-static
 django
+fontawesome-free
 gunicorn
