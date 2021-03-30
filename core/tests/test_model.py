@@ -1,17 +1,41 @@
 from django.test import TestCase
 
 from pessoa.models import Pessoa
-from core.models import Endereco
+from core.models import ClubeDeTiro, Endereco, ClubeEndereco
+from django.db import IntegrityError
+
+
+class ClubeModelTest(TestCase):
+    def setUp(self):
+        self.clube = ClubeDeTiro.objects.create(
+            nome='Team6',
+            cnpj='63876989000111',
+            email='teste@teste.com.br',
+            telefone='168888484848',
+        )
+
+    def test_create(self):
+        self.assertTrue(ClubeDeTiro.objects.exists())
+
+    def test_nome_is_not_blank(self):
+        field = ClubeDeTiro._meta.get_field('nome')
+        self.assertFalse(field.blank)
+
+    def test_cnpj_is_not_blank(self):
+        field = ClubeDeTiro._meta.get_field('cnpj')
+        self.assertFalse(field.blank)
+
+    def test_email_is_not_blank(self):
+        field = ClubeDeTiro._meta.get_field('email')
+        self.assertFalse(field.blank)
+
+    def test_telefone_is_not_blank(self):
+        field = ClubeDeTiro._meta.get_field('telefone')
+        self.assertFalse(field.blank)
+
 
 class EnderecoModelTest(TestCase):
     def setUp(self):
-        self.pessoa = Pessoa.objects.create(
-            nome='Leonardo Nascimento Cintra',
-            cpf='00022222222',
-            email='leonardo@django.com.br',
-            telefone='999999999'
-        )
-
         self.endereco = Endereco.objects.create(
             endereco='Rua 6 de abril',
             bairro='Centro',
@@ -23,7 +47,6 @@ class EnderecoModelTest(TestCase):
         )
 
     def test_create(self):
-        self.assertTrue(Pessoa.objects.exists())
         self.assertTrue(Endereco.objects.exists())
 
     def test_endereco_is_not_blank(self):
@@ -53,3 +76,33 @@ class EnderecoModelTest(TestCase):
     def test_cep_is_not_blank(self):
         field = Endereco._meta.get_field('cep')
         self.assertFalse(field.blank)
+
+
+class ClubeEnderecoModelTest(TestCase):
+    def setUp(self):
+        self.endereco = Endereco.objects.create(
+            endereco='Rua 6 de abril',
+            bairro='Centro',
+            cidade='Ibiraci',
+            uf='MG',
+            numero='123',
+            complemento='Perto do supermercado Hakime',
+            cep='37990000',
+        )
+
+        self.clube = ClubeDeTiro.objects.create(
+            nome='Team6',
+            cnpj='63876989000111',
+            email='teste@teste.com.br',
+            telefone='168888484848',
+        )
+
+        self.clube_endereco = ClubeEndereco.objects.create(
+            clube=self.clube,
+            endereco=self.endereco
+        )
+
+    def test_create(self):
+        self.assertTrue(Endereco.objects.exists())
+        self.assertTrue(ClubeDeTiro.objects.exists())
+        self.assertTrue(ClubeEndereco.objects.exists())

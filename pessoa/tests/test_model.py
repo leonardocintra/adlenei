@@ -7,11 +7,21 @@ from django.db import IntegrityError
 
 class PessoaModelTest(TestCase):
     def setUp(self):
+        self.endereco = Endereco.objects.create(
+            endereco='Rua 6 de abril',
+            bairro='Centro',
+            cidade='Ibiraci',
+            uf='MG',
+            numero='123',
+            cep='37990000'
+        )
+
         self.pessoa = Pessoa.objects.create(
             nome='Leonardo Nascimento Cintra',
             cpf='00022222222',
             email='leonardo@django.com.br',
-            telefone='999999999'
+            telefone='999999999',
+            endereco=self.endereco
         )
 
     def test_create(self):
@@ -39,7 +49,8 @@ class PessoaModelTest(TestCase):
                 nome='Outro Leonardo',
                 cpf='00022222222',
                 email='leonardddo@django.com.br',
-                telefone='999999999'
+                telefone='999999999',
+                endereco=self.endereco
             )
 
     def test_create_same_email(self):
@@ -48,7 +59,8 @@ class PessoaModelTest(TestCase):
                 nome='Outro Leonardo',
                 cpf='88888877765',
                 email='leonardo@django.com.br',
-                telefone='999999999'
+                telefone='999999999',
+                endereco=self.endereco
             )
 
     def test_pagou_default_to_False(self):
@@ -57,5 +69,3 @@ class PessoaModelTest(TestCase):
 
     def test_str(self):
         self.assertEqual('Leonardo Nascimento Cintra', str(self.pessoa))
-
-
