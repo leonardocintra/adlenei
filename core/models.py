@@ -1,9 +1,10 @@
 from django.db import models
+from tenants.models import TenantAwareModel
 from pessoa.validators import validate_cnpj
 from core.constants import UF
 
 
-class ClubeDeTiro(models.Model):
+class ClubeDeTiro(TenantAwareModel):
     nome = models.CharField('nome', max_length=100)
     cnpj = models.CharField('CNPJ', max_length=14, validators=[
                             validate_cnpj], unique=True)

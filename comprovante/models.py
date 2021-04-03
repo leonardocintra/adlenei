@@ -1,6 +1,8 @@
 from django.db import models
+from tenants.models import TenantAwareModel
 
-class Arma(models.Model):
+
+class Arma(TenantAwareModel):
     descricao = models.CharField('descrição', max_length=100)
     marca = models.CharField(max_length=100)
     calibre = models.CharField(max_length=5)

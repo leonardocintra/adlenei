@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'fontawesome-free',
 
+    'tenants',
     'core',
     'pessoa',
     'comprovante',
