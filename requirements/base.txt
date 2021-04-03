@@ -1,5 +1,5 @@
-dj-database-url
-dj-static
-django
-fontawesome-free
-gunicorn
+dj-database-url=0.5.0
+dj-static==0.0.6
+django==3.1.7
+fontawesome-free==5.15.3
+gunicorn==20.0.4

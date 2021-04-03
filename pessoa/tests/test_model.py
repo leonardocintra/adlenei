@@ -1,13 +1,12 @@
 from django.test import TestCase
 
-from pessoa.models import Pessoa
-from core.models import Endereco
+from pessoa.models import Pessoa, EnderecoPessoa
 from django.db import IntegrityError
 
 
 class PessoaModelTest(TestCase):
     def setUp(self):
-        self.endereco = Endereco.objects.create(
+        self.endereco = EnderecoPessoa.objects.create(
             endereco='Rua 6 de abril',
             bairro='Centro',
             cidade='Ibiraci',
